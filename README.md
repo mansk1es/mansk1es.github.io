@@ -1,5 +1,7 @@
 # mansk1es.github.io
 
-### testing shit
+### testing
 
 testing 
+
+I'm tryna do stuff with this theme
