@@ -42,11 +42,11 @@
          <p> LDAP (Lightweight Directory Access Protocol) is a protocol that allows everyone (in the network) to locate data in the network. Its main use is for authentication, it can be used to query information in the network, and collect important information about it (users, groups, OUs, etc.).  </p>
       </div>
       <b><u> Taking advantage of the LDAP protocol. </u><b>
-         <p> To make LDAP Relaying actually work, the most important requirement we need is the "Require LDAP Signing" option <b><u>disabled</u></b> on the Domain Controllers! This is very common, because the LDAP Signing option is turned off by default.</p>
+         <p> To make LDAP Relaying actually work, the most important requirement we need is the "Require LDAP Signing" option <strong><u>disabled</u></strong> on the Domain Controllers! This is very common, because the LDAP Signing option is turned off by default.</p>
          <h2><b> Unauthenticated Domain Takeover. </b></h2>
          <p> Relaying LDAP authentication over the network does not require the attacker to have valid, compromised credentials of a domain user. The whole essence and nature of the attack, is to take advantage of normal (NTLM challenge-response) authentication over the network, by forcing domain objects (users, computers) to authenticate to the attacker instead of the DC directly, the attacker then forwards (relaying) the valid LDAP authentication to the Domain Controller on behalf of the captured user/machine authentication. Using the valid authentication, we are able to practically dump information about the domain (and potentially importing it to bloodhound to have an even bigger picture), fully compromise computers in the network (Delegation), adding new machine accounts to the Domain (and elevating them), and even directly take over the entire domain. </p>
       <h2 id="The Requirements">The Requirements </h2>
-      <p> <strong>Fuck yeah!</strong> It doesn't include any fancy styles so it's easily mobile responsive. Just add the famous <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">responsive viewport tag</a> and you'll be good to go! </p>
+      <p> 1.  </p>
       <p>In fact, try resizing this page. Everything flows super nicely as you'll see.</p>
       <h2 id="bookmarklet">Bookmarklet</h2>
       <p> A bookmarklet is a snippet of JavaScript that sits in your bookmarks bar. </p>
