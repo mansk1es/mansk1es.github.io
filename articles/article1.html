@@ -43,7 +43,7 @@
       </div>
       <b><u> Taking advantage of the LDAP protocol. </u><b>
          <p> To make LDAP Relaying actually work, the most important requirement we need is the "Require LDAP Signing" option <strong>disabled</strong> on the Domain Controllers! This is very common, because the LDAP Signing option is turned off by default.</p>
-         <h2><b> Unauthenticated Domain Takeover. </b></h2>
+         <h2><b> Unauthenticated Domain Takeover </b></h2>
          <p> Relaying LDAP authentication over the network does not require the attacker to have valid, compromised credentials of a domain user. The whole essence and nature of the attack, is to take advantage of normal (NTLM challenge-response) authentication over the network, by forcing domain objects (users, computers) to authenticate to the attacker instead of the DC directly, the attacker then forwards (relaying) the valid LDAP authentication to the Domain Controller on behalf of the captured user/machine authentication. Using the valid authentication, we are able to practically dump information about the domain (and potentially importing it to bloodhound to have an even bigger picture), fully compromise computers in the network (Delegation), adding new machine accounts to the Domain (and elevating them), and even directly take over the entire domain. </p>
       <h2 id="The Requirements">The Requirements </h2>
       <p> 1.  </p>
