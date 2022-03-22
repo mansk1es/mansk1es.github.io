@@ -67,7 +67,7 @@
       <p> 3. For certain LDAP Relay attacks (such as Resource Based Constrained Delegation), the Domain Functionality Level has to be 2012 and above. </p>
       <p> 4. NTLM authentication enabled. </p>
       <h2 id="attack">The Attack</h2>
-      <p> Setting up the ntlmrelayx.py server targeting the Domain Controller, alongside with Responder that's going to send LLMNR broadcast to catch some NTLMv2 hashes. Looks like a Domain Admin hash was captured. </p>
+      <p> Setting up the ntlmrelayx.py server targeting the Domain Controller, alongside with Responder that's going to send LLMNR & NBT-NS broadcast to catch some NTLMv2 hashes. Looks like a Domain Admin hash was captured. </p>
       <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/0%20-%20Copy.png?raw=true" alt="ntlmrelayx.py"> 
       <p> Let's see what ntlmrelayx performs with the capture. </p>
       <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/1%20-%20Copy.png?raw=true" alt="relayed">
