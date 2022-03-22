@@ -61,65 +61,15 @@
       <p> 3. For certain LDAP Relay attacks (such as Resource Based Constrained Delegation), the Domain Functionality Level has to be 2012 and above. </p>
       <p> 4. NTLM authentication enabled. </p>
       <h2 id="attack">The Attack</h2>
-      <p> screenshots here </p>
+      <p> Setting up the ntlmrelayx.py server targeting the Domain Controller, alongside with Responder that's going to send LLMNR broadcast to catch some NTLMv2 hashes. Looks like a Domain Admin hash was captured. </p>
       <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/0%20-%20Copy.png?raw=true" alt="ntlmrelayx.py"> 
-      <hr>
-      <p>And here's a nicely marked up table!</p>
-      <table>
-         <thead>
-            <tr>
-               <th>Name</th>
-               <th>Quantity</th>
-               <th>Price</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td>Godzilla</td>
-               <td>2</td>
-               <td>$299.99</td>
-            </tr>
-            <tr>
-               <td>Mozilla</td>
-               <td>10</td>
-               <td>$100,000.00</td>
-            </tr>
-            <tr>
-               <td>Quesadilla</td>
-               <td>1</td>
-               <td>$2.22</td>
-            </tr>
-         </tbody>
-      </table>
-      <details>
-         <summary>Some summary/details can't hurt!</summary>
-         <p>Lorem ipsum dolor sit blah blah.</p>
-      </details>
-      <p>The dialog (form, and menu) tag</p>
-      <div> <button type="button" id="dialog-trigger"> Show me the dialog! </button> <span id="dialog-result"></span> </div>
-      <dialog id="dialog">
-         <header>This is a sample dialog</header>
-         <form method="dialog">
-            <p>What is your favorite pet animal?</p>
-            <menu> <button value="feline">Cats</button> <button value="canine">Dogs</button> <button value="other">Others</button> </menu>
-         </form>
-      </dialog>
-      <h3 id="typography">Typography</h3>
-      <p> more stuff. </p>
-      <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
-         "cool." 
-         <footer> <cite>Cool, "some cool quotation - Albert Einstein"</cite> </footer>
-      </blockquote>
-      <ul>
-         <li>Unordered list item 1</li>
-         <li>Unordered list item 2</li>
-         <li>Unordered list item 3</li>
-      </ul>
-      <ol>
-         <li>Ordered list item 1</li>
-         <li>Ordered list item 2</li>
-         <li>Ordered list item 3</li>
-      </ol>
+      <p> Let's see what ntlmrelayx performs with the capture. </p>
+      <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/1%20-%20Copy.png?raw=true" alt="relayed">
+      <p> This affectively shows that a new user has been created in the domain (NOT OPSEC), with Replication-Get-Changes-All attribute on the domain. That means we can use the newly created user (or if you targeted a user to escalate the access for) to perform the DCSync attack, thus taking over the domain. </p>
+      <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/2.png?raw=true" alt="pwned">
+      <p> Successfully using the DA hash to access the DC </p>
+      <img src="https://github.com/mansk1es/mansk1es.github.io/blob/main/images/article1/3.png?raw=true" alt="dcaccess">
+      
       <p>Addresses are also styled to be <strong>awesome</strong>!</p>
       <address> <a href="https://github.com/mansk1es">github</a><br> <a href="https://twitter.com/mansk1es">twitter</a><br> <a href="https://mansk1es.github.io">blog</a><br> </address>
       <br> 
